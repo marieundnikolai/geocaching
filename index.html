@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8YSRG82XFL"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8YSRG82XFL');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marie & Nikolai</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arapey">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="page-header">
+    <div class="header-center">
+        <h1>MARIE & NIKOLAI</h1>
+        <h2>wir heiraten.</h2>
+    </div>
+    <div class="header-right">
+        <img src="pictures/rightCorner.png" alt="Logo">
+    </div>
+</header>
+<div class="container">
+    <p>Bitte gib deinen Vornamen ein.</p>
+    <input
+            type="text"
+            id="vorname"
+            placeholder="Dein Vorname"
+            style="color: whitesmoke"
+            onkeydown="handleKeyPress(event)"
+    />
+    <div id="last-name-container" style="display: none;">
+        <p id="greeting"></p>
+        <input type="text" id="nachname" placeholder="Dein Nachname" onkeydown="handleKeyPress(event)" style="color: whitesmoke"/>
+
+    </div>
+    <p></p>
+    <button onclick="submitName()" style="color: #977A43">Öffnen</button>
+</div>
+
+<div class="centered-block">
+    <p id="error-message" style="display: none; color: #977A43; font-family: 'Arapey', serif; margin-top: 1rem;">
+        Fehler. Bitte kontaktiere Mimi oder Niko.
+    </p>
+</div>
+
+<div class="spacer"></div>
+
+<footer class="page-footer">
+    <div class="footer-left">
+        <img src="pictures/leftCorner.png" alt="Logo">
+    </div>
+    <div class="footer-center">
+        <p>&copy; 2026 Mimi & Niko – Wir freuen uns auf euch.</p>
+    </div>
+</footer>
+
+</body>
+
+<script src="index.js" defer></script>
+</html>

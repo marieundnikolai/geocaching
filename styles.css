@@ -1,0 +1,596 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arapey', 'Arapey-Regular', serif;
+    font-size: 1.2em;
+    background-color: #F5DED6;
+    color: #977A43;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 2em 1em;
+    font-size: 0.9em;
+    background: #F5DED6;
+}
+
+#schedule {
+    position: relative; /* This is the key change. */
+    /* Other styles for your section can go here if needed. */
+}
+
+a {
+    color: #977A43;       /* text color */
+    font-weight: bold;    /* bold text */
+}
+a:hover {
+    color: white;        /* color when hovering */
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.hidden { display: none; }
+
+.last-name-container {
+    display: none;
+}
+
+.error-message {
+    color: #977A43;
+    font-family: 'Arapey', 'Arapey-Regular', serif;
+    margin-top: 1rem;
+}
+
+.timeline-image-container {
+    position: absolute;
+    top: 50%; /* Positions the top of the image container at the vertical center */
+    right: 0; /* Aligns the image to the far right */
+    transform: translateY(-50%); /* Adjusts the image up by half its height for perfect vertical centering */
+    width: 150px; /* Adjust the width as needed */
+    height: auto;
+    z-index: 0; /* Ensures the image is behind your timeline content if there are any overlaps */
+}
+
+.timeline-image-container img {
+    width: 100px;
+    height: 100%;
+    object-fit: contain; /* Ensures the image scales correctly without distortion */
+    transform: rotate(20deg);
+}
+
+input {
+    padding: 8px;
+    font-size: 16px;
+    width: 200px;
+    margin: 10px 0;
+    background: #CDAC8F;
+    border: none;             /* Kein Rahmen */
+    box-shadow: none;         /* Kein Schatten */
+    outline: none;            /* Kein Fokus-Ring beim Klicken */
+    border-radius: 0;         /* Ecken nicht abgerundet (optional) */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;             /* Kein Rahmen */
+    box-shadow: none;         /* Kein Schatten */
+    outline: none;            /* Kein Fokus-Ring beim Klicken */
+    border-radius: 0;         /* Ecken nicht abgerundet (optional) */
+    background: #CDAC8F;
+}
+
+header {
+    text-align: center;
+    padding: 3em 1em 1em;
+    /*color: #E4CE7B; */
+    color: #977A43;
+}
+
+header h1 {
+    /*font-family: 'Great Vibes', cursive;*/
+    font-family: 'Arapey', 'Arapey-Regular', serif;
+    color: #977A43;
+    font-size: 4em;
+    font-weight: 300;
+    line-height: 1.1;
+    margin: 5rem;
+}
+
+header h2 {
+    font-family: 'Arapey', 'Arapey-Regular', serif;
+    color: #977A43;
+    font-size: 3em;
+    font-weight: 300;
+    margin: 5rem;
+}
+
+header p {
+    font-size: 1em;
+    color: #666;
+}
+
+.centered-block {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; /* Or any specific width less than 100% */
+    text-align: center; /* To center the text *inside* the block */
+}
+
+.hero-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+    display: block;
+    margin: 2em auto 1em;
+}
+
+.spacer {
+    height: 200px;  /* Höhe nach Bedarf anpassen */
+}
+
+.chapter-image {
+    text-align: center; /* Bild zentrieren */
+    margin: 40px 0;     /* Abstand nach oben/unten */
+}
+
+.chapter-image img {
+    width: 200px;  /* Größe anpassen */
+    height: auto;
+}
+
+.header-image {
+    text-align: center; /* Bild zentrieren */
+    margin: 40px 0;     /* Abstand nach oben/unten */
+}
+
+.header-image img {
+    width: 40px;  /* Größe anpassen */
+    height: auto;
+}
+
+.shuttle-image {
+    text-align: center; /* Bild zentrieren */
+    margin: 2rem 0;       /* Abstand nach oben/unten */
+}
+
+.shuttle-image img {
+    max-width: 90%;  /* Größe anpassen */
+    height: auto;
+}
+
+section {
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+.section-title {
+    font-family: 'Arapey', 'Arapey-Regular', serif;
+    color: #977A43;
+    font-size: 2em;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.timeline-date {
+    font-family: 'Arapey', 'Arapey-Regular', serif;
+    color: #977A43;
+    font-weight: 300;
+    font-size: 1.5em;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.timeline-item {
+    font-family: 'Arapey', 'Arapey-Regular', serif;
+    color: #977A43;
+    display: grid;
+    grid-template-columns: 40px 80px 1fr;
+    align-items: center; /* start*/
+    position: relative;
+    margin-bottom: 15px; /* Space between events within a group */
+}
+
+.timeline-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: whitesmoke; /* Solid black circle */
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0; /* Prevent bullet from shrinking */
+    z-index: 1; /* Ensure bullet is above the line */
+}
+
+.timeline-left {
+    font-family: 'Arapey', 'Arapey-Regular', serif;
+    color: #977A43;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-time {
+    font-family: 'Arapey', 'Arapey-Regular', serif;
+    color: #977A43;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding-top: 2px;
+}
+
+.timeline-group {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.timeline {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
+}
+
+.timeline-line {
+    flex-grow: 1;
+    width: 2px;
+    background-color: whitesmoke;
+    margin-top: 4px;
+}
+
+.timeline-line.invisible {
+    background-color: transparent;
+}
+
+/* Line connecting events within a group */
+.timeline-group .timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 11px; /* Adjust to align with the center of the bullet */
+    top: 16px; /* Start below the current bullet */
+    bottom: -58px; /* Extend below to connect to the next bullet's top */
+    width: 2px;
+    background-color: whitesmoke;
+    z-index: 0; /* Place behind the bullets */
+}
+/* Adjust line for the last item in a group if needed, though usually not */
+.timeline-group .timeline-item:last-child::after {
+    display: none; /* No line after the last event in a group */
+}
+ul.timeline {
+    list-style: none;
+    padding: 0;
+    border-left: 2px solid #ccc;
+    margin-left: 1.2em;
+}
+ul.timeline li {
+    position: relative;
+    padding: 1em 1em 1em 1.5em;
+}
+ul.timeline li::before {
+    content: "•";
+    position: absolute;
+    left: -0.9em;
+    top: 1.1em;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.wedding-party-container {
+    max-width: 1400px; /* Overall width, similar to the image example */
+    margin: 0 auto; /* Center the entire container */
+    padding: 80px 40px; /* Vertical and horizontal padding for the whole section */
+    text-align: center; /* Center main header content */
+}
+/* Header Styles */
+.wedding-header h1 {
+    font-family: 'Arapey', 'Arapey-Regular', serif; /* Example script font */
+    color: #977A43;
+    font-size: 3.5em; /* Large size for the main title */
+    margin-bottom: 10px;
+}
+.wedding-header p {
+    font-size: 1.1em;
+    max-width: 800px; /* Limit subtitle width for readability */
+    margin: 0 auto 60px auto; /* Center subtitle and add space below */
+    line-height: 1.4;
+}
+
+/* Person Cards Wrapper (Flexbox for horizontal layout) */
+.person-cards-wrapper {
+    display: flex;
+    /*flex-wrap: wrap; */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 80px; /* Space between the person cards */
+    overflow-x: auto; /* Allows horizontal scrolling */
+    padding-bottom: 20px; /* Add some padding for the scrollbar if it appears */
+    scroll-snap-type: x mandatory; /* Optional: for smoother scrolling between items */
+}
+/* Individual Person Card Styles */
+.person-card {
+    flex-shrink: 1; /* Prevents cards from shrinking by default */
+    flex-basis: 350px; /* Base width for each card. Adjust as needed. */
+    max-width: 400px; /* Maximum width to prevent cards from becoming too wide */
+    text-align: center;
+    margin-bottom: 40px; /* Space below each card */
+    scroll-snap-align: center; /* Optional: for smoother scrolling between items */
+
+}
+.person-image-container {
+    width: 150px; /* Neuer Durchmesser für das Kreisbild */
+    height: 150px;
+    margin: 0 auto 20px auto; /* Center image and add space below */
+    border-radius: 50%; /* Makes the container circular */
+    overflow: hidden; /* Hides parts of the image outside the circle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+.person-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the circular area without distortion */
+    display: block; /* Removes extra space below image */
+}
+.person-name {
+    font-family: 'Arapey', 'Arapey-Regular', serif; /* Script font for names */
+    font-size: 1.5em; /* Size for names */
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #977A43;
+}
+.person-description {
+    font-size: 1em;
+    line-height: 1.5;
+    max-width: 300px; /* Limit description width for readability */
+    margin: 0 auto; /* Center description text within its card */
+}
+
+.page-footer {
+    display: flex;
+    justify-content: center;   /* Text in der Mitte */
+    align-items: flex-end;     /* alles unten ausrichten */
+    padding: 20px;
+    position: relative;        /* wichtig für das absolute Bild */
+}
+
+.footer-left {
+    position: absolute;
+    left: 1px;
+    bottom: 1px;
+}
+
+.footer-left img {
+    width: 200px;   /* Größe anpassen */
+    height: auto;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.page-header {
+    display: flex;
+    justify-content: center;   /* Text zentriert */
+    align-items: flex-start;   /* alles oben ausrichten */
+    padding: 20px;
+    position: relative;        /* damit absolute Positionierungen möglich sind */
+}
+
+.header-right {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+
+.header-right img {
+    width: 200px;   /* Größe anpassen */
+    height: auto;
+}
+
+.header-center {
+    text-align: center;
+}
+
+.timeline-content {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Abstand zwischen Text und Bild */
+    font-size: 1.2rem;
+    font-family: 'Arapey', 'Arapey-Regular', serif;
+    color: #977A43;
+    padding-left: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .wedding-party-container {
+        padding: 60px 20px;
+    }
+
+    .wedding-header h1 {
+        font-size: 2.8em;
+    }
+
+    .wedding-header p {
+        font-size: 1em;
+        margin-bottom: 40px;
+    }
+
+    .person-cards-wrapper {
+        gap: 40px; /* Adjust gap for potentially smaller cards */
+    }
+
+    .person-card {
+        max-width: 300px; /* Adjust max width for stacked cards */
+    }
+
+    .person-image-container {
+        /* GEÄNDERT: Noch kleinere Bilder auf sehr kleinen Bildschirmen */
+        width: 100px;
+        height: 100px;
+    }
+}
+@media (max-width: 576px) { /* Or 576px, 480px, whatever you define as "mobile like iPhone" */
+    .timeline-image-container {
+        display: none;
+    }
+    .person-cards-wrapper {
+        flex-direction: column; /* Stack them vertically */
+        align-items: center; /* Center them when stacked */
+    }
+
+    .person-card {
+        width: 90%; /* Occupy most of the width on mobile */
+        max-width: 350px; /* Prevent cards from getting too wide */
+        margin-bottom: 20px; /* Add space between stacked cards */
+    }
+
+    .header-right img {
+        width: 100px;   /* Größe anpassen */
+        height: auto;
+    }
+
+    .footer-left img {
+        width: 100px;   /* Größe anpassen */
+        height: auto;
+    }
+
+}
+
+/* Optional: Further refine for very small screens if needed */
+@media (max-width: 397px) {
+    .person-card {
+        padding: 15px;
+    }
+    .person-name {
+        font-size: 1.5em;
+    }
+    .timeline-group .timeline-item:not(:last-child)::after {
+        bottom: -78px; /* Extend below to connect to the next bullet's top */
+    }
+}
+
+@media (max-width: 338px) {
+    .timeline-group .timeline-item:not(:last-child)::after {
+        bottom: -89px; /* Extend below to connect to the next bullet's top */
+    }
+}
+
+@font-face {
+    font-family: 'Arapey-Regular';
+    src: url('fonts/Arapey-Regular.woff2') format('woff2'),
+    url('fonts/Arapey-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arapey-Italic';
+    src: url('fonts/Arapey-Italic.woff2') format('woff2'),
+    url('fonts/Arapey-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.subtitle {
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+.orte-liste {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.orte-liste li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.status {
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+.status.offen {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status.entdeckt {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.actions {
+    margin-top: 24px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: center;   /* Text zentriert */
+    align-items: flex-start;   /* alles oben ausrichten */
+    padding: 20px;
+    position: relative;        /* damit absolute Positionierungen möglich sind */
+}
+
+.header-center {
+    text-align: center;
+}
+
+.header-right {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+
+.header-right img {
+    width: 200px;   /* Größe anpassen */
+    height: auto;
+}
+
+button:hover {
+    opacity: 0.92;
+}
+
+
+@font-face {
+    font-family: 'Arapey-Regular';
+    src: url('fonts/Arapey-Regular.woff2') format('woff2'),
+    url('fonts/Arapey-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arapey-Italic';
+    src: url('fonts/Arapey-Italic.woff2') format('woff2'),
+    url('fonts/Arapey-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
