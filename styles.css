@@ -424,6 +424,7 @@ ul.timeline li::before {
 
 .btn:hover {
   color: black; 
+}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
