@@ -8,7 +8,7 @@ if (group) {
 const groups = {
     // ToVaRi Groups
     TVRi: [
-        ['tovari', 'invite'], ['tvr', 'i'],
+      ['tovari', 'invite'], ['tvr', 'i'],
     ],
     TVRc: [
         ['tvr', 'c'], ['tovari', 'camper'],
@@ -18,48 +18,43 @@ const groups = {
     TVRa: [
         ['tvr', 'a'], ['tovari', 'accept'],
         ['elisabeth', 'arras'], ['stefan', 'arras'],
+        ['pia', 'arras'], ['pieter', 'kindermans'], ['pieter-jan', 'kindermans'],
+        ['ilka', 'arras'], ['andre', 'sinnema'],
         ['martina', 'roth'], ['oliver', 'roth'], ['tina', 'roth'], ['oli', 'roth'],
         ['jens', 'paar'], ['selina', 'paar'], ['seli', 'paar'],
-        ['frauke', 'frauke'],
-        ['pia', 'arras'], ['pieter', 'kindermans'], ['pieter-jan', 'kindermans'],
-        [],
-        ['anna', 'kuchen'],
-        ['nikolai', 'arras'], ['marie', 'gnott'], ['niko', 'arras'], ['mimi', 'gnott'],
-        ['ilka', 'arras'], ['andre', 'sinnema'],
-        ['carsten', 'jerke'], ['julia', 'jerke'],
+        ['alicia', 'fertsch'], ['lukas', 'fertsch'], ['lucas', 'fertsch'],
         ['sandra', 'deutz'], ['thomas', 'kazala'], ['thomek', 'kazala'],
-        ['leona', 'bahn'], ['sebastian', 'schaumann'], ['schaumann', 'schaumann'],
-        ['patty', 'dittkens'], ['patrizia', 'dittkens'],
-        ['ansi', 'bernard'], ['tobias', 'sedlmeier'], ['anne-sophie', 'bernard'], ['tobi', 'sedlmeier'],
+        ['therese', 'gnott'], ['monika', 'manderla'], ['moni', 'manderla'],
         ['nils', 'richrath'], ['marie', 'gottowik'], ['Luisa', 'nogga'], ['leon', 'manitz'],  ['lulu', 'nogga'],
+        ['sebastian', 'schaumann'], ['schaumann', 'schaumann'], ['denis', 'polczyk'],
+        ['patty', 'dittkens'], ['patrizia', 'dittkens'], ['anna', 'kuchen'],
+        ['ansi', 'bernard'], ['tobias', 'sedlmeier'], ['anne-sophie', 'bernard'], ['tobi', 'sedlmeier'],
+        ['carsten', 'jerke'], ['julia', 'jerke'],
+        ['frauke', 'schulten'],
+        ['nikolai', 'arras'], ['marie', 'gnott'], ['niko', 'arras'], ['mimi', 'gnott'],
     ],
 
     // Sopra Groups
-    SOPi: [
-        ['sop', 'i'], ['sopra', 'invite'],
+    SOPi: [ 
+      ['sop', 'i'], ['sopra', 'invite'],
     ],
     SOPa: [
-        ['sop', 'a'], ['sopra', 'accept'],
-        ['suraj', 'shetty'],
-        ['serkan', 'aygültekiin'],
-        ['hendrik', 'reents'],
-        ['michael', 'keck'],
-        ['fabienne', 'walter'], ['moritz', 'zimmermann'], ['fabi', 'walter']
+      ['sop', 'a'], ['sopra', 'accept'],
+      ['suraj', 'shetty'], ['trish'],
+      ['serkan', 'aygültekiin'], ['sophia', ''],
+      ['hendrik', 'reents'], ['amira', ''], 
+      ['michael', 'keck'], ['lobke', ''], 
+      ['fabienne', 'walter'], ['moritz', 'zimmermann'], ['fabi', 'walter']
     ],
 
     // Cardeto Groups
     CDOi: [
-        ['cdo', 'i'], ['cardeto', 'invite'],
-
-        ['günther', 'goretzki'],
+      ['cdo', 'i'], ['cardeto', 'invite'],
     ],
     CDOa: [
-        ['cdo', 'a'], ['cardeto', 'accept'],
-        ['therese', 'gnott'],
-        ['monika', 'manderla'], ['moni', 'manderla'],
-        ['dora', 'kazala'], ['jendrek', 'kazala'],
-        ['alicia', 'fertsch'], ['lukas', 'fertsch'], ['lucas', 'fertsch'],
-        ['irene', 'goretzki'],
+      ['cdo', 'a'], ['cardeto', 'accept'],   
+      ['dora', 'kazala'], ['jendrek', 'kazala'],
+      ['irene', 'goretzki'], ['günther', 'goretzki'],
     ],
 
     // Self Booker Groups
@@ -68,28 +63,26 @@ const groups = {
         ['björn','dornbusch'], ['marc','meyer'],
     ],
     SBKa: [
-        ['sbk', 'a'], ['selbstbucher', 'accept'], ['selfbooker', 'accept'],
-        ['ewelina','sarnecka'], ['anton','pfeiffer'],
-        ['peter','biegaj'], ['josepha','biegaj'],['andreas', 'biegaj'], ['andy', 'biegaj'],
-        ['selina', 'weindorf'], ['esther','heidner'], ['kathrin', 'liebhardt'], ['jenny','myzev'], ['jennifer','myzev'],
-        ['klara','gellrich'], ['laurens','gellrich'], ['vanessa','ernst'], ['micah','hensing'], ['lukas','lelittko'], ['lynn',''],
-        ['hannah', 'hapekotte'],
-        ['fredi','leufgen'], ['judith','leufgen'], ['frederik','leufgen'],
-        ['giuliano', 'börner'], ['giuli', 'börner'],
-        ['kevin','thiel'], ['anna','becker'], ['toni','becker'],
-        ['jessica','wille'], ['daniel','wille'],
-        ['ilka','möller'], ['flavia','möller'], ['joe','möller'],
-        ['nathanja',''], ['stefan','gramlich'], ['stefan','gramlich'],
-        ['robin', 'lugt'], ['melanie',''],
-        ['frauke', ''],
-        ['denis', 'polczyk'],
-        ['jana','könekamp'], ['dennis','hierl'],
+      ['sbk', 'a'], ['selbstbucher', 'accept'], ['selfbooker', 'accept'],
+      ['ewelina','sarnecka'], ['anton','pfeiffer'],
+      ['peter','biegaj'], ['josepha','biegaj'],['andreas', 'biegaj'], ['andy', 'biegaj'],
+      ['klara','gellrich'], ['laurens','gellrich'], ['vanessa','ernst'], ['micah','hensing'], ['lukas','lelittko'], ['lynn',''],
+      ['fredi','leufgen'], ['judith','leufgen'], ['frederik','leufgen'], ['hannah', 'hapekotte'],
+      ['giuliano', 'börner'], ['giuli', 'börner'], ['kevin','thiel'], ['anna','becker'], ['toni','becker'],
+      ['jessica','wille'], ['daniel','wille'],
+      ['ilka','möller'], ['flavia','möller'], ['joe','möller'], ['jonathan','möller'], ['jan', 'oehl'], ['jan', 'öhl'], ['anna', 'möller'],
+      ['nathanja',''], ['stefan','gramlich'], ['stefan','gramlich'],
+      ['jonathan', 'gramlich'], ['livia', 'gramlich'], ['Benedikt', 'gramlich'], ['elisa', 'gramlich'],
+      ['robin', 'lugt'], ['melanie',''],
+      ['selina', 'weindorf'], ['esther','heidner'], ['kathrin', 'liebhardt'], ['jenny','myzev'], ['jennifer','myzev'],
+      
+      ['jana','könekamp'], ['dennis','hierl'],
     ],
     SBKie: [['sbk', 'ie']],
     SBKim: [['sbk', 'im']],
     SBKic: [['sbk', 'ic']],
     SBKe: [['sbk', 'e']],
-};
+  };
 
 function submitName() {
     const vornameInput = document.getElementById('vorname');
