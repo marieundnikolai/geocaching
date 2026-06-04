@@ -39,7 +39,8 @@ const orte = [
     { id: "5f8ed65345f5ccc78ca8b5aa7640b05c43e0a25b", name: "Olivenbäume" },
     { id: "35642b527b93e5a366f4f584cf01fe31ae0c6b24", name: "Schweinegehege" },
     { id: "95d99b424781106303eaae4fc0a8b4d071f67e81", name: "Innenhof" },
-    { id: "3e595e4f2d5cf9a6c2e25affe7fd5da4c55bb5cc", name: "Aussichtspunkt" }
+    { id: "3e595e4f2d5cf9a6c2e25affe7fd5da4c55bb5cc", name: "Aussichtspunkt" },
+    { id: "thecage", name: "Cage" },
 ];
 
 function getOrtStatus(id) {
