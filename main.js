@@ -32,7 +32,7 @@ if (validGroups.includes(activeGroup)) {
 
 const orte = [
     { id: "95e8023eedc18e8bab4a0888312c440bb01ca755", name: "Pool" },
-    { id: "b1a4eb7aca57ad07c732fd5e9d8d039aee46c25a", name: "Pool" },
+    { id: "b1a4eb7aca57ad07c732fd5e9d8d039aee46c25a", name: "Hochbeet" },
     { id: "63e57cfd514c88315e9946f75a6bc8f76aa1200e", name: "Barfußpfad" },
     { id: "6721152a61f50fd79b7321f8302d443799ed4287", name: "Weberei" },
     { id: "bc6b1494f0604a7e07e65e49f980fedab869f9b3", name: "Tabaklounge" },
